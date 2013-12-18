@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Welcome to Know Who !Followed</h3>
+  
+  <% if not  @unfriended.blank? %> 
+  		<h1>You have Lost <%= @unfriended.count %> Friends Since Last Visit</h1>
+  		<% i=0 %>
+  		<% @unfriended.each do |i| %>
+  			<%= @prev_hash[i] %>
+  		<% end %>
+    <% else %>
+      <h1>Congratulations !! No Unfollowers</h1>
+	<% end %>
+ 
+ <% if not  @new_friends.blank? %> 
+      <h1>You have <%= @new_friends.count %> New Friends Since Last Visit</h1>
+      <% i=0 %>
+      <% @new_friends.each do |i| %>
+        <%= @new_hash[i] %>
+      <% end %>
+  <% end %>
+
+</html>

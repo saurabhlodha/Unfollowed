@@ -1,0 +1,26 @@
+<% title "Authentications" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Provider</th>
+    <th>Uid</th>
+    <th>User Name</th>
+    <th>Oauth Token</th>
+    <th>Oauth Secret</th>
+    <th>Email</th>
+  </tr>
+  <% for authentication in @authentications %>
+    <tr>
+      <td><%= authentication.user_id %></td>
+      <td><%= authentication.provider %></td>
+      <td><%= authentication.uid %></td>
+      <td><%= authentication.user_name %></td>
+      <td><%= authentication.oauth_token %></td>
+      <td><%= authentication.oauth_secret %></td>
+      <td><%= authentication.email %></td>
+      <td><%= link_to "Destroy", authentication, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
