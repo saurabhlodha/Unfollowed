@@ -1,0 +1,29 @@
+<html>
+<head></head>
+
+<body>
+  <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li>Know Who Unfollowed</li>
+                <li><%= link_to "Home", controller: "welcome", action: "index" %></li>
+                <li><%= link_to "Twitter", "/auth/twitter" %></li>
+                <li><%= link_to "Facebook", "/auth/facebook" %></li>
+                <li class="active"><%= link_to "Settings Panel", controller: "welcome", action: "edit" %></li>
+                <li><%= link_to "About", controller: "welcome", action: "about" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+
+        <h3>Please Provide the Email id to where you would like to get the notification</h3>
+        <%= form_tag("/registered", method: "get") do %>
+          <%= label_tag(:user_email_id, "Enter your Email Id: ") %>
+          <%= text_field_tag 'user_email_id', nil, placeholder: 'Enter Email Id' %>
+          <%= submit_tag("Submit") %>
+        <% end %>
+        
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head></head>
+<body>
+<div class="container">
+
+	<div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+              	<li>Know Who Unfollowed</li>
+                <li><%= link_to "Home", controller: "welcome", action: "index" %></li>
+                <li><%= link_to "Twitter", "/auth/twitter" %></li>
+                <li><%= link_to "Facebook", "/auth/facebook" %></li>
+                <li><%= link_to "Settings Panel", controller: "welcome", action: "setting" %></li>
+                <li class="active"><%= link_to "About", controller: "welcome", action: "about" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+  <div class = "row">
+    <div class= "span3"></div>
+    <div class= "span6">
+      <h2 align="center">About me..</h2>
+      <p>
+        Hi there !! My name is Saurabh and I'm a full time Software Developer. Created this Website just for fun and help people stay connected.. If you'd like to stay in touch, please feel free to connect with me on <a href="https://www.facebook.com/100rabhlodha">Facebook</a>, <a href="https://twitter.com/CoolSrbh">Twitter</a>, <a href="http://www.linkedin.com/profile/view?id=142409248&trk=nav_responsive_tab_profile">Linkedin</a> and <a href="https://plus.google.com/+SaurabhLodha/posts">Google+</a>.. You could download the code of this website <a href="https://github.com/saurabhlodha/Unfollowed">here..</a></p>
+    </div>
+    <div class= "span3"></div>
+  </div>
+
+</body>
+</html>

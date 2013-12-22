@@ -1,0 +1,23 @@
+<html>
+<head></head>
+<body>
+<div class="container">
+
+	<div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+              	<li>Know Who Unfollowed</li>
+                <li><%= link_to "Home", controller: "welcome", action: "index" %></li>
+                <li><%= link_to "Twitter", "/auth/twitter" %></li>
+                <li><%= link_to "Facebook", "/auth/facebook" %></li>
+                <li class="active"><%= link_to "Settings Panel", controller: "welcome", action: "setting" %></li>
+                <li><%= link_to "About", controller: "welcome", action: "about" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+<div class="page-header"><h1>Congratulations !! <small>You have Registered </small></h1></div>
+</body>
+</html>
