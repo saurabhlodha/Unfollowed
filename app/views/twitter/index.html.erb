@@ -3,24 +3,45 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>Welcome to Know Who !Followed</h3>
+    <div class="container">
+
+  <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li>Know Who Unfollowed</li>
+                <li><%= link_to "Home", controller: "welcome", action: "index" %></li>
+                <li class="active" ><%= link_to "Twitter", "/auth/twitter" %></li>
+                <li><%= link_to "Facebook", "/auth/facebook" %></li>
+                <li><%= link_to "Settings Panel", controller: "welcome", action: "edit" %></li>
+                <li><%= link_to "About", controller: "welcome", action: "about" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
   
-  <% if not  @unfollowers.blank? %> 
+    <% if not  @unfollowers.blank? %> 
   		<h1>You have <%= @unfollowers.count %> Unfollowers Since Last Visit</h1>
   		<% i=0 %>
+      <table class = "table table-striped">
   		<% @unfollowers.each do |i| %>
-  			<%= @prev_hash[i] %>
+  			<tr><td><%= @prev_hash[i] %></td></tr>
   		<% end %>
-    <% else %>
-      <h1>Congratulations !! No Unfollowers</h1>
-	<% end %>
+      </table>
+      <% else %>
+        <h1>Congratulations !! No Unfollowers</h1>
+	   <% end %>
  
- <% if not  @new_followers.blank? %> 
-      <h1>You have <%= @new_followers.count %> New followers Since Last Visit</h1>
-      <% i=0 %>
-      <% @new_followers.each do |i| %>
-        <%= @new_hash[i] %>
+      <% if not  @new_followers.blank? %> 
+        <h1>You have <%= @new_followers.count %> New followers Since Last Visit</h1>
+        <% i=0 %>
+        <table class = "table table-striped">
+        <% @new_followers.each do |i| %>
+          <tr><td><%= @new_hash[i] %></td></tr>
+        <% end %>
+        </table>
       <% end %>
-  <% end %>
-
+    </div>
+</body>
 </html>

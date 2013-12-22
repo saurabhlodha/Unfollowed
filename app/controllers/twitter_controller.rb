@@ -7,6 +7,11 @@ class TwitterController < ApplicationController
       #render :text => auth.to_yaml
       if not auth.blank?
         @p= Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
+        if not @p.blank?
+          @p.oauth_token = auth['credentials']['token']
+          @p.oauth_secret = auth['credentials']['secret']
+          @p.save!
+      end
 
       else
         @p= Authentication.find_by_user_name_and_provider(current_user.email,'twitter')
@@ -59,7 +64,7 @@ class TwitterController < ApplicationController
                 db.follower_name = name
                 db.follower_id = ids 
                 db.save!               
-                redirect_to "/welcome/#{@p.uid}"
+                redirect_to :controller => 'welcome', :action => 'edit'
           else
 #              @prev_data = @f
               prev_id = @prev_data.follower_id.split(',') #Array of previos ids from Database

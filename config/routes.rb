@@ -3,11 +3,14 @@ Unfollowed::Application.routes.draw do
   get "facebook/index"
   resources :authentications
   get "twitter/index"
+  get 'welcome/setting', to: 'welcome#setting'
+  get 'welcome/edit', to: 'welcome#edit'
+  get 'welcome/about', to: 'welcome#about'
   get '/auth/twitter/callback' => 'twitter#index'
   get '/auth/facebook/callback' => 'facebook#index'
   get "welcome/index"
   get 'welcome/:uid' => 'twitter#welcome'
-  get '/registered' => 'twitter#registered'
+  get '/registered' => 'welcome#registered'
   devise_for :users
   get 'logout' => 'devise/sessions#destroy'
   root :to => "welcome#index"

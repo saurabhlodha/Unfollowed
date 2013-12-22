@@ -7,8 +7,10 @@ class FacebookController < ApplicationController
      
     if not auth.blank?
         @p= Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
-        @p.oauth_token = auth['credentials']['token']
-        @p.save!
+        if not @p.blank?
+        	@p.oauth_token = auth['credentials']['token']
+        	@p.save!
+    	end
     else
         @p= Authentication.find_by_user_name_and_provider(current_user.email,'facebook')
         puts 'omniauth NOT BEING USED. Authentication is already completed. access_token & access_token_secret fetched from database'      
@@ -56,7 +58,7 @@ class FacebookController < ApplicationController
 		                db.follower_name = name
 		                db.follower_id = ids 
 		                db.save!               
-		                redirect_to facebook_welcome_path
+		                redirect_to :controller => 'welcome', :action => 'edit'
 		          else
 		#              @prev_fb_data = @f
 		              prev_id = @prev_fb_data.follower_id.split(',') #Array of previos ids from Database

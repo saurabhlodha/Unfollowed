@@ -4,25 +4,30 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h2>Welcome to Know Who !Followed</h2>
-  
-  <% if not  @ids.blank? %> 
-  		<h1>You have <%= @ids.count %> Unfollowers Since Last Visit </h1>
-  		<% i=0 %>
-  		<% @ids.each do |i| %>
-  			<%= @hash[i] %>
-  		<% end %>
-    <% else %>
-      <h1>Congratulations !! No Unfollowers</h1>
-	<% end %>
+        <div class = "container">
 
-   <% if not  @new_followers.blank? %> 
-      <h1>You have <%= @new_followers.count %> New followers Since Last Visit</h1>
-      <% i=0 %>
-      <% @new_followers.each do |i| %>
-        <%= @new_hash[i] %><br />
-      <% end %>
-  <% end %>
+        <h2>Welcome to Know Who !Followed</h2>
+        <% if not  @ids.blank? %> 
+        		<h1>You have <%= @ids.count %> Unfollowers Since Last Visit </h1>
+        		<% i=0 %>
+            <table class = "table table-striped">
+        		<% @ids.each do |i| %>
+        			<tr><td><%= @hash[i] %></td></tr>
+        		<% end %>
+            </table>
+          <% else %>
+            <h1>Congratulations !! No Unfollowers</h1>
+      	<% end %>
 
+         <% if not  @new_followers.blank? %> 
+            <h1>You have <%= @new_followers.count %> New followers Since Last Visit</h1>
+            <% i=0 %>
+            <table class = "table table-striped">
+            <% @new_followers.each do |i| %>
+              <tr><td><%= @new_hash[i] %></td></tr>
+            <% end %>
+            </table>
+        <% end %>
+      </div>
  
 </html>

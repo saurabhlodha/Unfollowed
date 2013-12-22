@@ -1,12 +1,49 @@
-<h2>Welcome!! Know who is your most Recent Unfollower </h2><br />
-<table>
-	<tr><td><%= link_to "Twitter", @urlt %></td></tr>
-	<tr><td><%= link_to "Facebook", @urlf %></td></tr>
-</table>
- <!-- <p><strong>Please Sign into Account through Twitter</strong></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Know Who UnFollowed</title>
+</head>
+<body>
+<div class="container">
 
-<a href="/auth/twitter" class="auth_provider">
-    <%= image_tag "twitter_64.png", :size => "64*64", :alt => "twitter_64" %><br />	
-    Twitter
-</a>
--->
+	<div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+              	<li><bold>Know Who Unfollowed</bold></li>
+                <li class="active"><%= link_to "Home", controller: "welcome", action: "index" %></li>
+                <li><%= link_to "Twitter", @urlt %></li>
+                <li><%= link_to "Facebook", @urlf %></li>
+                <li><%= link_to "Settings Panel", controller: "welcome", action: "edit" %></li>
+                <li><%= link_to "About", controller: "welcome", action: "about" %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+
+	<div class="page-header">
+		<h2>Welcome!! <small> <strong>Know who is your most Recent Unfollower </strong></small></h2><br />
+	</div>
+	<div class="row">
+		<div class="span6">
+			<p>
+				You can Check your Facebook Friends and Twitter Followers by clicking on below Links.<br/><small> (P.S. We need your permission to access your Twitter and Facebook data. Totally safe !! We can access only Friends/Follower List.) </small>
+			</p><br/>
+			<table class="table">
+				<tr><td><h2><%= link_to "Twitter", @urlt %></h2></td></tr>
+				<tr><td><h2><%= link_to "Facebook", @urlf %></h2></td></tr>
+			</table>
+		</div>  <!-- End Of Span6 -->
+		<div class="span6">
+			<h2>About Us</h2>
+			Please Authenticate yourself using the Tabs Given
+		</div>  <!-- End Of Span6 -->
+	</div> <!-- End Of Row -->
+	<div id="footer">
+      <div class="container">
+        <p class="footer">&copy; Copyright <a href="http://www.facebook.com/100rabhlodha">Saurabh Lodha</a>.</p>
+      </div>
+    </div>
+</div> <!-- End Of Container -->
+</body>
