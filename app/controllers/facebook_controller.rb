@@ -86,7 +86,7 @@ class FacebookController < ApplicationController
 		#              puts @diff_name
 		              @new_friends = new_id - prev_id
 		              @email_id = @p.email
-		              UserMailer.welcome_email(@prev_hash, @unfriended,@email_id,@new_hash,@new_friends).deliver
+		              #UserMailer.welcome_email(@prev_hash, @unfriended,@email_id,@new_hash,@new_friends).deliver
 		              @prev_fb_data.follower_id = new_id.join(',')
 		              @prev_fb_data.follower_name = new_name.join(',')
 		              @prev_fb_data.save!
