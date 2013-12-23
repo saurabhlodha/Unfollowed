@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "SaurabhLodha@knowWhoUnfollowed"
 
 def welcome_email(h, unfollowed, e, nh,newFollowed)
     @hash = h
