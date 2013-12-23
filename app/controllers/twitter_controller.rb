@@ -90,7 +90,7 @@ class TwitterController < ApplicationController
 #              puts @diff_name
               @new_followers = new_id - prev_id
               @email_id = @p.email
-              #UserMailer.welcome_email(@prev_hash, @unfollowers,@email_id,@new_hash,@new_followers).deliver
+              UserMailer.welcome_email(@prev_hash, @unfollowers,@email_id,@new_hash,@new_followers).deliver
               @prev_data.follower_id = new_id.join(',')
               @prev_data.follower_name = new_name.join(',')
               @prev_data.save!
