@@ -2,6 +2,7 @@
 <head></head>
 
 <body>
+  <div class = "container">
   <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
@@ -17,13 +18,15 @@
             </div>
           </div>
         </div><!-- /.navbar -->
-
-        <h3>Please Provide the Email id to where you would like to get the notification</h3>
+        <h3 align = "center">Please Provide the Email id to where you would like to get the notification</h3>
+        <div class = "offset4 span4">
+        
         <%= form_tag("/registered", method: "get") do %>
           <%= label_tag(:user_email_id, "Enter your Email Id: ") %>
           <%= text_field_tag 'user_email_id', nil, placeholder: 'Enter Email Id' %>
           <%= submit_tag("Submit") %>
         <% end %>
-        
+        </div>
+  </div>        
 </body>
 </html>

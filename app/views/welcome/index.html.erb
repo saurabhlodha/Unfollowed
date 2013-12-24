@@ -10,7 +10,7 @@
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-              	<li><bold>Know Who Unfollowed</bold></li>
+              	<li align ="center"><bold>Know Who Unfollowed</bold></li>
                 <li class="active"><%= link_to "Home", controller: "welcome", action: "index" %></li>
                 <li><%= link_to "Twitter", @urlt %></li>
                 <li><%= link_to "Facebook", @urlf %></li>
@@ -26,7 +26,7 @@
 		<h2>Welcome!! <small> <strong>Know who is your most Recent Unfollower </strong></small></h2><br />
 	</div>
 	<div class="row">
-		<div class="span6">
+		<div class="span7">
 			<p>
 				You can Check your Facebook Friends and Twitter Followers by clicking on below Links.<br/><small> (P.S. We need your permission to access your Twitter and Facebook data. Totally safe !! We can access only Friends/Follower List.) </small>
 			</p><br/>
@@ -34,11 +34,15 @@
 				<tr><td><h2><%= link_to "Twitter", @urlt %></h2></td></tr>
 				<tr><td><h2><%= link_to "Facebook", @urlf %></h2></td></tr>
 			</table>
-		</div>  <!-- End Of Span6 -->
-		<div class="span6">
-			<h2>About Us</h2>
-			Please Authenticate yourself using the Tabs Given
-		</div>  <!-- End Of Span6 -->
+		</div>  <!-- End Of Span7 -->
+		<div class="span5">
+			<div class = "well">
+			<h2>Instructions</h2><br />
+			<p><bold>Hi There !!</bold><br /><br />
+				<small>This web application helps you monitor your Facebook Friends and Twitter Followers at the same place. Just click on the tabs given and authorize this app. After you authorize, we could keep a tab on your Friends and the next time you visit us, we will show you the Friends you have lost and the Friends you made.. TaDa !!</small>
+			</p>
+			</div>  <!-- End Of well -->
+		</div>  <!-- End Of Span5 -->
 	</div> <!-- End Of Row -->
 	<div id="footer" style="bottom:0">
       <div class="container">

@@ -11,7 +11,7 @@
                 <li><%= link_to "Home", controller: "welcome", action: "index" %></li>
                 <li><%= link_to "Twitter", "/auth/twitter" %></li>
                 <li><%= link_to "Facebook", "/auth/facebook" %></li>
-                <li><%= link_to "Settings Panel", controller: "welcome", action: "setting" %></li>
+                <li><%= link_to "Settings Panel", controller: "welcome", action: "edit" %></li>
                 <li class="active"><%= link_to "About", controller: "welcome", action: "about" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path %></li>
               </ul>
