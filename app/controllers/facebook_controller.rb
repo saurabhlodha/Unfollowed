@@ -13,8 +13,6 @@ class FacebookController < ApplicationController
     	end
     else
         @p= Authentication.find_by_user_name_and_provider(current_user.email,'facebook')
-        @p.oauth_token = auth['credentials']['token']
-        @p.save!
         puts 'omniauth NOT BEING USED. Authentication is already completed. access_token & access_token_secret fetched from database'      
     end
 
