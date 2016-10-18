@@ -6,13 +6,15 @@ class FacebookController < ApplicationController
     #render :text => auth.to_yaml
      
     if not auth.blank?
-        @p= Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
-        if not @p.blank?
-        	@p.oauth_token = auth['credentials']['token']
-        	@p.save!
+      @p= Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
+      if not @p.blank?
+        @p.oauth_token = auth['credentials']['token']
+        @p.save!
     	end
     else
         @p= Authentication.find_by_user_name_and_provider(current_user.email,'facebook')
+        @p.oauth_token = auth['credentials']['token']
+        @p.save!
         puts 'omniauth NOT BEING USED. Authentication is already completed. access_token & access_token_secret fetched from database'      
     end
 
