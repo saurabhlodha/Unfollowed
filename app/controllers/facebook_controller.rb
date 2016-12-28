@@ -71,16 +71,16 @@ class FacebookController < ApplicationController
 		              end
 		              
 		              @new_hash = Hash[new_id.zip new_name]
-		              puts "Previous Id is :"
-		              puts prev_id
-		              puts prev_id.inspect
-		              puts "New Id is"
-		              puts new_id
-		              puts new_id.inspect
+		              #puts "Previous Id is :"
+		              #puts prev_id
+		              #puts prev_id.inspect
+		              #puts "New Id is"
+		              #puts new_id
+		              #puts new_id.inspect
 		#              @diff_id = prev_id - new_id
 		              @unfriended = prev_id - new_id
-		                puts "Difference id is :"
-		                puts @diff_id
+		                #puts "Difference id is :"
+		                #puts @diff_id
 		#              @diff_name = prev_name - new_name
 		#               puts "Difference name is :"
 		#              puts @diff_name
