@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
         puts 'omniauth NOT BEING USED. Authentication is already completed. access_token & access_token_secret fetched from database'
       
        # @urlf = facebook_index_path
-       @urlf = facebook_index_path
+       @urlf = "/auth/facebook" # facebook_index_path
     else
       @urlf = "/auth/facebook"
     end
